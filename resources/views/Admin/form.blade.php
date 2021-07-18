@@ -33,7 +33,8 @@
                     </div>
                     <div class="form-group col-md-3">
                         Avatar
-                        <img style="height: 45px;border-radius: 3px" src="https://kenh14cdn.com/2020/8/28/photo-1-15986171022051518128948.jpg">
+                        <img style="height: 45px;border-radius: 3px"
+                             src="https://kenh14cdn.com/2020/8/28/photo-1-15986171022051518128948.jpg">
                     </div>
                 </div>
                 <div class="row">
@@ -43,7 +44,8 @@
                     </div>
                     <div class="form-group col-md-3">
                         Cover photo
-                        <img style="height: 45px;border-radius: 3px" src="https://kenh14cdn.com/2020/8/28/photo-1-15986171022051518128948.jpg">
+                        <img style="height: 45px;border-radius: 3px"
+                             src="https://kenh14cdn.com/2020/8/28/photo-1-15986171022051518128948.jpg">
                     </div>
                 </div>
                 <div class="row">

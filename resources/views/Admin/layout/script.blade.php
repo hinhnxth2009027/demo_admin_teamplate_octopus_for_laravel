@@ -1,4 +1,4 @@
-<!-- Vendor -->
+    <!-- Vendor -->
 <script src="/libs/assets/vendor/jquery/jquery.js"></script>
 <script src="/libs/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
 <script src="/libs/assets/vendor/bootstrap/js/bootstrap.js"></script>

@@ -37,7 +37,7 @@
                             <br>
                         </div>
                         <div class="col-md-12 show_form">
-                            <form action="{{route('user_store')}}" method="post">
+                            <form action="{{route('user.store')}}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="form-group col-md-5">
@@ -141,24 +141,29 @@
                     <tr class="gradeX">
                         <td class="table_item">#{{$users[$i]->id}}</td>
                         <td class="table_item"><img class="Show_avatar"
-                                                    src="{{$users[$i]->avatar}}">
+                                                    src="/libs/assets/images/User_image/{{$users[$i]->avatar}}">
                         </td>
                         <td class="table_item">{{$users[$i]->user_name}}</td>
                         <td class="table_item">{{$users[$i]->email}}</td>
                         <td class="table_item">{{$users[$i]->phone}}</td>
                         <td class="table_item">{{$users[$i]->address}}</td>
                         @if($users[$i]->role === \App\Enums\User_role::ADMIN)
-                            <td class="table_item">Admin</td>
+                            <td class="table_item" style="color: #c82333">Admin</td>
                         @else
                             <td class="table_item">User</td>
                         @endif
                         <td class="table_item">{{$users[$i]->birthday}}</td>
                         <td class="table_item actions">
-                            <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                            <a href="{{route('user.edit',$users[$i]->id)}}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                            <a href="{{route('user.show',$users[$i]->id)}}" class="on-default edit-row"><i class="fa fa-info-circle"></i></a>
                             @if($users[$i]->role != \App\Enums\User_role::ADMIN)
-                                <a href="#" class="on-default edit-row"><i class="fa fa-star"></i></a>
+                                <a onclick="return confirm('Bằng cách đồng ý bạn sẽ cấp quyền quản trị cho người dùng này')" href="{{route('user.upgrade',$users[$i]->id)}}" class="on-default edit-row" style="margin: 0"><i class="fa fa-star"></i></a>
                             @endif
-                            <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                            <form method="post" action="{{route('user.destroy',$users[$i]->id)}}" style="display: inline">
+                                @csrf
+                                @method('DELETE')
+                                <button onclick="return confirm('Bạn có chắc chắn muốn xóa người dùng này không')" style="border: none;height: 0;width: 0"><i class="fa fa-trash-o" style="cursor: pointer"></i></button>
+                            </form>
                         </td>
                     </tr>
                 @endfor
